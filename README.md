@@ -114,3 +114,7 @@ curl http://localhost:8081/api/v1/orders/<order-id>
 - Schema das tabelas criado via `ddl-auto: update` (sem Flyway nesta versão).
 - Banco: um container Postgres com 4 bancos (`order_db`, `payment_db`, `fraud_db`, `notification_db`) criados por `docker/postgres-init.sql`.
 - Build multi-stage: `maven:3.9-eclipse-temurin-21` (build) → `eclipse-temurin:21-jre` (runtime).
+
+## Diagrama do fluxo
+
+![fluxo](./docs/fluxo.png)
