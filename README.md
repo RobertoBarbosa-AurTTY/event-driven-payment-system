@@ -16,18 +16,18 @@ POST /api/v1/orders
         ▲                                    │
         │ payment.succeeded / payment.failed │ payment.authorizing
         │ payment.events                     ▼ payment.events
-        │                              ┌─────────────────┐
+        │                              ┌──────────────────┐
         │                              │  fraud-service   │
         │                              │  (:8083)         │
-        │                              └─────────────────┘
+        │                              └──────────────────┘
         │                                    │
         │              fraud.approved / fraud.rejected
         │              fraud.events
         ▼
-┌─────────────────┐   order.approved / order.failed   ┌─────────────────────┐
-│ notification-    │ ────────────────────────────────► │ notification-service │
+┌──────────────────┐   order.approved / order.failed   ┌─────────────────────┐
+│ notification-    │ ────────────────────────────────► │ notification-service│
 │ service (consome)│       order.events                │ (:8084)             │
-└─────────────────┘                                    └─────────────────────┘
+└──────────────────┘                                   └─────────────────────┘
 ```
 
 ### Fluxo da saga (coreografia)
