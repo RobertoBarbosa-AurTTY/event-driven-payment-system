@@ -9,10 +9,10 @@ Implementação em Java 21 / Spring Boot 4 com **Outbox pattern** e **Saga coreo
 POST /api/v1/orders
         │
         ▼
-┌─────────────────┐   order.created    ┌─────────────────┐
+┌─────────────────┐   order.created    ┌──────────────────┐
 │  order-service  │ ─────────────────► │  payment-service │
 │  (:8081)        │  order.events      │  (:8082)         │
-└─────────────────┘                    └─────────────────┘
+└─────────────────┘                    └──────────────────┘
         ▲                                    │
         │ payment.succeeded / payment.failed │ payment.authorizing
         │ payment.events                     ▼ payment.events
