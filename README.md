@@ -118,3 +118,7 @@ curl http://localhost:8081/api/v1/orders/<order-id>
 ## Diagrama do fluxo
 
 ![fluxo](./docs/fluxo.png)
+
+## Arquitetura em detalhe
+
+Consulte o diagrama de sequencia em docs/.
